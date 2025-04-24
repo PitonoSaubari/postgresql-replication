@@ -84,38 +84,6 @@ Verify data is replicated to db2
 
 Periodic table data was used in this project
 
-Source: https://github.com/andrejewski/periodic-table
+Source: https://github.com/andrejewski/periodic-table  
 License: ISC License
-
-
-
-
-
-
-### to delete
-
-Import / load data to mysql01
-
-    sudo docker exec -it db1 bash
-    cd /tmp/data
-    mysql -uroot -p"root1234" employees < employees.sql
-    mysql -uroot -p"root1234" mysql
-    grant all on employees.* to 'master'@'%';
-    flush privileges;
-
-Verify credential is correct and database is populated
-
-    mysql -umaster -p"password1234" employees
-    show tables;
-    select count(*) from employees;
-    select * from employees limit 5;
-
-Verify database can be updated
-
-    update employees set first_name='George' where emp_no=10001;
-    select * from employees where emp_no=10001;
-    update employees set first_name='Georgi' where emp_no=10001;
-    select * from employees where emp_no=10001;
-
-### end of to delete
 
